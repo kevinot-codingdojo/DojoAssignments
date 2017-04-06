@@ -1,0 +1,141 @@
+Edited screen output below:
+1. Open command prompt window.
+		Screen output:
+		Microsoft Windows [Version 10.0.14393]
+		(c) 2016 Microsoft Corporation. All rights reserved.
+
+2. Change directory to your local directory where you want to create your repository folder:
+	a.	C:\WINDOWS\System32>cd\
+	b.	C:\>cd..\users\kevin\gittest\
+
+3. Create the folder DojoAssignments, and then navigate to it:
+		C:\Users\Kevin\gittest>md DojoAssignments
+		C:\Users\Kevin\gittest>cd DojoAssignments
+
+4. Initialize the folder as a Git repository:
+		C:\Users\Kevin\gittest\DojoAssignments>git init
+			Initialized empty Git repository in C:/Users/Kevin/gittest/DojoAssignments/.git/
+
+5. How are we doing? Check status:
+		C:\Users\Kevin\gittest\DojoAssignments>git status
+			On branch master
+
+			Initial commit
+
+			nothing to commit (create/copy files and use "git add" to track)
+
+6. Log into github.com, click +v in upper right corner, and select New Repository.
+
+7. Name repository the same as the local repository on my machine, then click green Create repository button at bottom of the page.
+
+8. In resulting page, copy the "git remote add origin ...DojoAssignements.git" command line text. 
+
+9. Return to command prompt, paste the git remote command line, and then press Enter.
+
+10. C:\Users\Kevin\gittest\DojoAssignments>git remote add origin https://github.com/kevinot-codingdojo/DojoAssignments.git
+
+11. Copy next line from GitHub page to command line.
+
+	a. C:\Users\Kevin\gittest\DojoAssignments>git push -u origin master
+	
+		error: src refspec master does not match any.
+		error: failed to push some refs to 'https://github.com/kevinot-codingdojo/DojoAssignments.git'
+
+	Note: In the demo, the instructor had created two files in the repository before creating the remote repository. The Assignment Repo did not specificy that. So I created one file, committed it, and then added it. 
+
+	b. Create a file so folder isn't empty:
+		C:\Users\Kevin\gittest\DojoAssignments>copy NUL style.css
+			1 file(s) copied.
+
+	c. Check the status:
+		C:\Users\Kevin\gittest\DojoAssignments>git status
+			On branch master
+
+			Initial commit
+
+			Untracked files:
+			(use "git add <file>..." to include in what will be committed)
+
+			style.css
+
+			nothing added to commit but untracked files present (use "git add" to track)
+
+	d. Add the file:
+		C:\Users\Kevin\gittest\DojoAssignments>git add *.*
+
+	e. Commit changes to repository, with comment:
+		C:\Users\Kevin\gittest\DojoAssignments>git commit -m "added style to repository"
+			[master (root-commit) 9335b05] added style to repository
+			1 file changed, 0 insertions(+), 0 deletions(-)
+			create mode 100644 style.css
+
+	f. Check status again:
+		C:\Users\Kevin\gittest\DojoAssignments>git status
+			On branch master
+			nothing to commit, working tree clean
+
+12.	Try the push command again:
+		C:\Users\Kevin\gittest\DojoAssignments>git push -u origin master
+			Counting objects: 3, done.
+			Writing objects: 100% (3/3), 219 bytes | 0 bytes/s, done.
+			Total 3 (delta 0), reused 0 (delta 0)
+			To https://github.com/kevinot-codingdojo/DojoAssignments.git
+			* [new branch]      master -> master
+			Branch master set up to track remote branch master from origin.
+
+13. Create the readme.md file as per assignment. In your text editor (Notepad/Notepad+), write a short description about this folder, then save it to the DojoAssignments folder. 
+14. Check your status again:
+	C:\Users\Kevin\gittest\DojoAssignments>git status
+		On branch master
+		Your branch is up-to-date with 'origin/master'.
+		Untracked files:
+		(use "git add <file>..." to include in what will be committed)
+
+			readme.md
+
+		nothing added to commit but untracked files present (use "git add" to track)
+
+15. Add the file:
+	C:\Users\Kevin\gittest\DojoAssignments>git add readme.md
+
+16. Check the status:
+	C:\Users\Kevin\gittest\DojoAssignments>git status
+		On branch master
+		Your branch is up-to-date with 'origin/master'.
+		Changes to be committed:
+		(use "git reset HEAD <file>..." to unstage)
+
+			new file:   readme.md
+
+17. Commit the file, with comment describing changes made to the file(s):
+	C:\Users\Kevin\gittest\DojoAssignments>git commit -m "added readme"
+		[master 3b71109] added readme
+		1 file changed, 1 insertion(+)
+		create mode 100644 readme.md
+
+18. Check the status:
+	C:\Users\Kevin\gittest\DojoAssignments>git status
+		On branch master
+		Your branch is ahead of 'origin/master' by 1 commit.
+		(use "git push" to publish your local commits)
+		nothing to commit, working tree clean
+
+19. Push the changes out to the remote repository on GitHub:
+	C:\Users\Kevin\gittest\DojoAssignments>git push -u origin master
+		Counting objects: 3, done.
+		Delta compression using up to 2 threads.
+		Compressing objects: 100% (3/3), done.
+		Writing objects: 100% (3/3), 361 bytes | 0 bytes/s, done.
+		Total 3 (delta 0), reused 0 (delta 0)
+		To https://github.com/kevinot-codingdojo/DojoAssignments.git
+		9335b05..3b71109  master -> master
+		Branch master set up to track remote branch master from origin.
+
+20. Check the status:
+	C:\Users\Kevin\gittest\DojoAssignments>git status
+		On branch master
+		Your branch is up-to-date with 'origin/master'.
+		nothing to commit, working tree clean
+
+C:\Users\Kevin\gittest\DojoAssignments>
+
